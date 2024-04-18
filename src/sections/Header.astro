@@ -1,0 +1,27 @@
+---
+import Typewriter from "../components/Typewriter";
+import IconButton from "../components/IconButton.astro";
+---
+<header id="header" class="grid place-items-center">
+  <img class="w-40 h-40" src="ash-happy.webp" alt="🧙‍♂️" />
+  <h1 class="font-waterfall font-bold text-5xl mt-1 mb-1.5">Ashton G. Heald</h1>
+  <h2 class="text-lg">
+    I'm a
+    <Typewriter client:load />
+  </h2>
+  <nav>
+    <ul class="flex">
+      <IconButton href="https://www.threads.net/@ashton.heald" icon="/icons/threads.svg" name="threads" text="Threads" />
+      <IconButton href="https://twitter.com/AshtonHeald" icon="/icons/x.svg" name="x" text="Twitter" />
+      <IconButton href="https://medium.com/@ashtonheald" icon="/icons/medium.svg" name="x" text="Twitter" />
+      <IconButton href="https://dev.to/ashthedev" icon="/icons/dev.to.svg" name="x" text="Twitter" />
+      <IconButton href="https://www.buymeacoffee.com/ashtonheald" icon="/icons/buymeacoffee.svg" name="buy me a coffee" text="Support" />
+    </ul>
+  </nav>
+</header>
+
+<style>
+h1 {
+		-webkit-text-stroke: 0.5px;
+	}
+</style>

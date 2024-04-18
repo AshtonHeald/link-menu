@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../sections/Header.astro";
+import Menu from "../sections/Menu.astro";
+import Contact from "../sections/Contact.astro";
+import Footer from "../sections/Footer.astro";
+---
+<Layout title="Welcome to Astro.">
+	<main id="card" class="sm:rounded-xl bg-neutral-50 h-full relative w-full flex flex-col p-5 sm:shadow-lg sm:w-96 sm:h-[768px]">
+		<Header />
+		<section id="flip" class="h-96 w-full mb-5 [perspective:1000px] relative transition-all duration-500 [transform-style:preserve-3d]">
+			<Menu />
+			<Contact />
+		</section>
+		<Footer />
+	</main>
+</Layout>
+
+<script>
+	// Flip Effect //
+	const flip = document.getElementById("flip");
+	const contactBtn = document.getElementById("contactBtn");
+	const closeBtn = document.getElementById("closeBtn");
+	const front = document.getElementById("front");
+
+	contactBtn.addEventListener("click", () => {
+		flip.classList.add("[transform:rotateY(180deg)]");
+		setTimeout(() => {
+        front.style.display = "none";
+    }, 250);
+	});
+	closeBtn.addEventListener("click", () => {
+		flip.classList.remove("[transform:rotateY(180deg)]");
+		front.style.display = "block";
+	});
+	
+</script>
+	
+

@@ -1,0 +1,10 @@
+---
+import MenuButton from "../components/MenuButton.astro";
+---
+<nav id="front" class="inset-0 [backface-visibility:hidden]">
+  <ul class="flex flex-wrap ">
+    <MenuButton id="digitalgarden" isLink={true} href="https://cafe.ashtonheald.me/" text="Digital Garden" icon="/icons/seeding.svg" name="seeding" nam="seedling" />
+    <MenuButton id="webportfolio" isLink={true} href="https://ashthe.dev/" text="Web Portfolio" icon="/icons/code.svg" name="code" />
+    <MenuButton id="contact" isLink={false} id="contactBtn" text="Contact" icon="/icons/mail.svg" name="360" />
+  </ul>
+</nav>

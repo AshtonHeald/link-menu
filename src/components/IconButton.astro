@@ -1,0 +1,10 @@
+---
+const { icon, name, href } = Astro.props;
+---
+
+<li class="mx-1">
+	<a class="icon-btn grid place-items-center h-12 w-12 p-2
+transition-transform hover:scale-125 focus-visible:border-2 focus-visible:rounded-full focus-visible:border-pink-400" href={href}>
+		<img class="w-6 h-6" src={icon} alt={name} />
+	</a>
+</li>

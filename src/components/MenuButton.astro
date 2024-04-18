@@ -1,0 +1,17 @@
+---
+const { text, id, isLink, href, icon, name} = Astro.props;
+
+const ButtonElement = isLink ? "a" : "button";
+
+
+---
+<li class="py-3 flex-auto w-[calc(100%-80px)]">
+<ButtonElement 
+  {id} 
+  {href} 
+  class="h-14 leading-4 rounded-full border-2 border-neutral-800 w-full flex justify-between px-6 items-center shadow-lg hover:scale-[.975] transition-transform focus-visible:outline focus-visible:outline-pink-400 focus-visible:outline-2 focus-visible:outline-offset-2" 
+>
+  {text}
+  <img class="w-6 h-6" src={icon} alt={name} />
+</ButtonElement>
+</li>

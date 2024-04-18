@@ -1,0 +1,10 @@
+---
+const { id, type, label, placeholder, rows, isInput } = Astro.props;
+const InputElement = isInput ? "input" : "textarea";
+---
+
+<div class="relative py-2">
+	<InputElement class="w-full focus-visible:outline focus-visible:outline-pink-400 focus-visible:outline-2 focus-visible:outline-offset-2 bg-neutral-50 py-1 px-1.5 text-sm border-2 border-neutral-950 rounded" {id} {type} name={id} {placeholder} {rows} required>
+	</InputElement>
+  <label class="absolute py-1.5 px-2 text-sm text-neutral-400" for={id}>{label}</label>
+</div>
