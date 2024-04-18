@@ -26,6 +26,34 @@
 		<link rel="manifest" href="/site.webmanifest" />
 		<link rel="preload" href="/fonts/waterfall-latin-400-normal.woff2" crossorigin="anonymous" as="font" type="font/woff2" />
 		<link rel="preload" href="/fonts/josefin-sans-latin-400-normal.woff2" crossorigin="anonymous" as="font" type="font/woff2" />
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function () {
+    emailjs.init("8PhuMhkMRUrBunrkl");
+  })();
+</script>
+<script type="text/javascript">
+  window.onload = function () {
+    var errorElement = document.getElementById("error-message");
+    var successElement = document.getElementById("success-message");
+
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      errorElement.innerText = "";
+      successElement.innerText = "";
+
+      emailjs.sendForm("contact_service", "links_form", this).then(
+        function () {
+          successElement.innerText = "Message Sent Successfully!";
+        },
+        function (error) {
+          errorElement.innerText = "Unable to send message. Please try again later.";
+          console.log(error);
+        }
+      );
+    });
+  };
+</script>
 	</head>
 	<body class="bg-neutral-200 font-josefin text-neutral-950 h-screen w-full grid place-items-center">
 		<slot />
